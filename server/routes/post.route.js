@@ -10,6 +10,15 @@ router.get('/', async (req, res) => {
     res.send(posts);
 });
 
+router.get('/:id', async (req, res) => {
+    const post = await Post.findOne({ _id: req.params.id });
+    if(post) {
+        res.send(post);
+    } else {
+        res.status(401).send({ msg: 'Post not foundend' });
+    }
+});
+
 router.post('/', upload.single('image'), async (req, res) => {
     const post = new Post({
         title: req.body.title,
