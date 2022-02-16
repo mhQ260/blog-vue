@@ -20,6 +20,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use('/api/user', userRoute);
 app.use('/api/post', postRoute);
+app.use('/images', express.static('uploads/'));
+
 
 
 app.listen(5000, () => { console.log("Server is running at at http://localhost:5000") }) 
