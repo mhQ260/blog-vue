@@ -3,6 +3,7 @@ import AddPost from "../views/AddPost.vue";
 import Manage from "../views/Manage.vue";
 import About from "../views/About.vue";
 import Post from "../views/Post.vue";
+import EditPost from "../views/EditPost.vue";
 
 
 const routes = [
@@ -17,9 +18,14 @@ const routes = [
         component: AddPost
     },
     {
-        path: "post/:id",
+        path: "/post/:id",
         name: "post",
         component: Post
+    },
+    {
+        path: "/edit-post/:id",
+        name: "edit-post",
+        component: EditPost
     },
     {
         path: "/manage",
